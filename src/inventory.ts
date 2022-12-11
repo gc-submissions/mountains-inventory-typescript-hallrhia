@@ -13,20 +13,13 @@ let inventory:InventoryItem[] = [
 ];
 
 function calcInventoryValue(inventory:InventoryItem[]) : number {
-    // let sum = 0;
-    //for each inventoryitem take price * quantity
-    inventory.forEach()
+    let sum = 0;
 
-    // for (let product of inventory){
-    //    sum = product.product.price * product.quantity;
-    // }
-    // return sum;    
-        
-
-    //add sum together
-
-    //returns total value of all products in array
-
-    //total should be 170
+    Object.values(inventory).forEach((product) => {
+        sum += (product.product.price * product.quantity);
+    });
+    return sum;
 }
 console.log(calcInventoryValue(inventory));
+
+export {calcInventoryValue, InventoryItem};
